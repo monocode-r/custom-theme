@@ -42,6 +42,12 @@
   </div>
 {%- endpaginate -%}
 
+{% if paginate.pages > 1 %}
+  <nav aria-label="Page navigation example" class="pagination_nav">
+    {{ paginate | default_pagination: next: '»', previous: '«' }}
+  </nav>
+{% endif %}
+
 {% schema %}
 {
   "name": "t:sections.main-blog.name",

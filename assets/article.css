@@ -45,3 +45,28 @@
   .article__tags p {
     margin-right: .5rem;
   }
+
+  .article__pagenation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .article__next,
+  .article__previous {
+    width: 20%;
+    padding: 8px;
+    background-color: #eee;
+    border-radius: 24px;
+  }
+
+  .article__next {
+    margin-right: 16px;
+  }
+
+  .article__btn {
+    display: inherit;
+    text-align: center;
+  }

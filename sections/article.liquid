@@ -37,6 +37,20 @@
   <div class="article__content">
     {{ article.content }}
   </div>
+  {% if section.settings.pagenation %}
+    <div class="article__pagenation">
+      {% if blog.previous_article %}
+        <div class="article__next">
+          <a href="{{blog.previous_article}}" class="article__btn">前の記事へ</a>
+        </div>
+      {% endif %}
+      {% if blog.next_article %}
+        <div class="article__previous">
+          <a href="{{blog.next_article}}" class="article__btn">次の記事へ</a>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}
@@ -48,6 +62,12 @@
         "type": "checkbox",
         "id": "thumbnail",
         "label": "サムネイル"
+      },
+      {
+        "type": "checkbox",
+        "id": "pagenation",
+        "label": "ページ送り",
+        "default": true
       }
     ]
   }

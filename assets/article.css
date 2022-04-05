@@ -1,72 +1,110 @@
+.article__content {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+@media (max-width: 900px) {
   .article__content {
-    max-width: 1000px;
-    margin: 3rem auto 0;
+    max-width: 100%;
+    padding: 0 1rem;
   }
-  @media (max-width: 900px) {
-    .article__content {
-      max-width: 100%;
-      padding: 0 1rem;
-    }
-  }
+}
 
-  .article__info {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
+.article__info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 
-  .article__author,
-  .article__published_at {
-    margin-right: 2rem;
-    color: #999;
-    font-size: 14px;
-  }
+.article__author,
+.article__published_at {
+  margin-right: 2rem;
+  color: #999;
+  font-size: 14px;
+}
 
-  .article__published_at {
-    margin-right: 0;
-  }
+.article__published_at {
+  margin-right: 0;
+}
 
-  .article__title {
-    text-align: center;
-  }
+.article__title {
+  text-align: center;
+}
 
-  .article__image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+.article__image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
-  .article__tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .article__tags p {
-    margin-right: .5rem;
-  }
+.article__tags p {
+  margin-right: .5rem;
+}
 
-  .article__pagenation {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-  }
+.article__pagenation {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
 
+.article__next,
+.article__previous {
+  width: 20%;
+  padding: 8px;
+  background-color: #eee;
+  border-radius: 24px;
+}
+
+.article__next {
+  margin-right: 16px;
+}
+
+.article__btn {
+  display: inherit;
+  text-align: center;
+}
+
+.article__sns {
+  padding: 2rem 0;
+}
+
+@media(max-width: 599px) {
   .article__next,
   .article__previous {
-    width: 20%;
-    padding: 8px;
-    background-color: #eee;
-    border-radius: 24px;
+    width: 90%;
   }
+}
 
-  .article__next {
-    margin-right: 16px;
-  }
+/* 共通設定 */
+.btn {
+  display: inline-block;
+  padding: .8rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background-color: #eee;
+}
 
-  .article__btn {
-    display: inherit;
-    text-align: center;
+.btn.btn--small {
+  width: 100px;
+}
+
+.btn.btn--middle {
+  width: 150px;
+}
+
+.btn.btn--large {
+  width: 200px;
+}
+
+@media(max-width: 599px) {
+  .btn.btn--large {
+    margin-bottom: 16px;
   }
+}

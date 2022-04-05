@@ -36,17 +36,27 @@
   </div>
   <div class="article__content">
     {{ article.content }}
+    {% assign snsPosition = section.settings.vertical_alignment %}
+    {% assign snsBtnSize = section.settings.snsBtn_size %}
+    {% if section.settings.show_sns %}
+    <div class="article__sns" style="text-align: {{ snsPosition }};">
+      <a href="#" class="btn btn--{{ snsBtnSize }}">Twitter</a>
+      <a href="#" class="btn btn--{{ snsBtnSize }}">Facebook</a>
+    </div>
+    {% endif %}
   </div>
+
+
   {% if section.settings.pagenation %}
     <div class="article__pagenation">
       {% if blog.previous_article %}
         <div class="article__next">
-          <a href="{{blog.previous_article}}" class="article__btn">前の記事へ</a>
+          <a href="{{blog.previous_article}}" class="article__btn">次の記事へ</a>
         </div>
       {% endif %}
       {% if blog.next_article %}
         <div class="article__previous">
-          <a href="{{blog.next_article}}" class="article__btn">次の記事へ</a>
+          <a href="{{blog.next_article}}" class="article__btn">前の記事へ</a>
         </div>
       {% endif %}
     </div>
@@ -68,6 +78,52 @@
         "id": "pagenation",
         "label": "ページ送り",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sns",
+        "label": "SNSシェアボタン表示する",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "SNSシェアボタンの表示箇所",
+        "options": [
+          {
+            "value": "left",
+            "label": "左に表示"
+          },
+          {
+            "value": "center",
+            "label": "中央に表示"
+          },
+          {
+            "value": "right",
+            "label": "右に表示"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "select",
+        "id": "snsBtn_size",
+        "label": "SNSシェアボタンのサイズ変更",
+        "options": [
+          {
+            "value": "small",
+            "label": "小"
+          },
+          {
+            "value": "middle",
+            "label": "中"
+          },
+          {
+            "value": "large",
+            "label": "大"
+          }
+        ],
+        "default": "middle"
       }
     ]
   }
